@@ -8,6 +8,12 @@
         text-align: center;
     }
 
+    ion-card{
+        background-color: rgba(255, 255, 255, 0.5);
+
+
+    }
+
     img{
         margin-top: 30px;
         width: 240px;
@@ -22,17 +28,17 @@
     .login{
         margin-top: 10px;
         text-align: center;
-        border: none;
-        padding: 15px 80px;
-        text-decoration: none;
+        // border: none;
+        // padding: 15px 80px;
+        // text-decoration: none;
         display: inline-block;
         text-transform: uppercase;
         font-size: 13px;
         transition: all 0.3s ease-in-out;
         width: 85%;
         height: 35px;
-        color: #ffffff;
-        background-color: blue;
+        // color: #ffffff;
+        // background-color: blue;
     }
 
     input[type=text] , input[type=password]{
@@ -50,17 +56,9 @@
         text-align: center;
         margin: 0 auto;
         margin-bottom: 10px;
+        margin-top: 10px;
     }
 
-
-// ion-item{
-//     --background: #3880ff;
-//     --color: #fff;
-// }
 ion-button{
     --background: #062f77;
 }
-
-// a{
-//     color: #fff;
-// }
