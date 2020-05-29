@@ -1,0 +1,39 @@
+<ion-content>
+  <img src="assets/image/logo.png" alt="logo">
+
+  <br>
+  <br>
+  <br>
+  <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+
+    <input type="text" placeholder="CPF" formControlName="cpf" maxLength="11">
+    <input type="password" placeholder="Senha" formControlName="password">
+
+    <button ion-buttom class="login" type="submit" [disabled]="loginForm.invalid">Acessar</button>
+  </form>
+</ion-content>
+
+<!-- <ion-content color="primary" padding>
+  <form [formGroup]="loginForm"  (ngSubmit)="login()" novalidate>
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div class="ion-text-center">
+            <h3>Login</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input name="cpf" type="text" placeholder="CPF" formControlName="cpf" maxLength="11"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="Senha" formControlName="password"></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button size="large" type="submit" [disabled]="loginForm.invalid" expand="block">Login</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content> -->

@@ -8,6 +8,15 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StorageService } from './shared/service/storange.service';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './security/auth.guard';
+import { AuthService } from './security/auth.service';
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,11 +24,17 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    JwtModule.forRoot({config: {tokenGetter: tokenGetter}})
   ],
   providers: [
+    AuthService,
     StatusBar,
     SplashScreen,
+    StorageService,
+    JwtHelperService,
+    AuthGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
